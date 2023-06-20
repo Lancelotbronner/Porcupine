@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="OpenTK" />
+    <None Remove="Rendering\" />
+    <None Remove="Shaders\" />
+    <None Remove="Shaders\TilemapRenderer.frag" />
+    <None Remove="Shaders\TilemapRenderer.geom" />
+    <None Remove="Shaders\TilemapRenderer.vert" />
+    <None Remove="Textures\" />
+    <None Remove="Textures\tiles.png" />
+    <None Remove="Worlds\" />
+    <None Remove="Worldgen\" />
+    <None Remove="Client\" />
+    <None Remove="Chunks\" />
+    <None Remove="Tiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenTK" Version="5.0.0-pre.8" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Rendering\" />
+    <Folder Include="Shaders\" />
+    <Folder Include="Textures\" />
+    <Folder Include="Worlds\" />
+    <Folder Include="Worldgen\" />
+    <Folder Include="Client\" />
+    <Folder Include="Chunks\" />
+    <Folder Include="Tiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shaders\TilemapRenderer.frag" />
+    <EmbeddedResource Include="Shaders\TilemapRenderer.geom" />
+    <EmbeddedResource Include="Shaders\TilemapRenderer.vert" />
+    <EmbeddedResource Include="Textures\tiles.png" />
+  </ItemGroup>
+</Project>
